@@ -1,0 +1,66 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Teacher {
+  id               String  @id @default(cuid())
+  email            String  @unique
+  name             String  
+  password         String
+  courses          Course[]
+}
+
+
+
+model Course {
+  id              String   @id @default(cuid())
+  teacherId       String
+  teacher         Teacher  @relation(fields: [teacherId], references:[id])
+  title           String   @db.Text
+  maxseats        Int      
+  startdate       DateTime 
+  published       Boolean @default(false)
+  leads           Leads[]
+}
+
+
+model Learner {
+  id               String  @id @default(cuid())
+  email            String  @unique
+  name             String 
+  password         String 
+  course           Leads[]
+  
+}
+
+enum Status {
+  APPLIED
+  ACCEPT
+  REJECT
+  WAITLIST
+}
+
+model Leads {
+  id      String @id @default(uuid())
+
+  courseId String
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  
+  userId  String
+  user    Learner @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  status  Status @default(APPLIED)
+  
+  comment String?
+
+}
+
+
+
