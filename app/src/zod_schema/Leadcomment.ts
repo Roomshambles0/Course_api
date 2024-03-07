@@ -3,7 +3,7 @@ import  { z } from "zod";
 
 
 
-export const leadcomment = z.object({
+export const leadcommentinput = z.object({
 
    id:z.string(),
    comment:z.string(),
@@ -11,4 +11,4 @@ export const leadcomment = z.object({
 })
 
 
-type leadcomment = z.infer<typeof leadcomment>;
+export type leadcomment = z.infer<typeof leadcommentinput>;

@@ -56,7 +56,7 @@ model Leads {
   userId  String
   user    Learner @relation(fields: [userId], references: [id], onDelete: Cascade)
   
-  email     String @unique
+  email     String 
   name      String
 
   phoneno   String

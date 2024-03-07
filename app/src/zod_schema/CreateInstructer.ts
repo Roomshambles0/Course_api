@@ -2,13 +2,13 @@ import  { z } from "zod";
 
 
 
-export const createinstructer = z.object({
+export const createinstructerinput = z.object({
 
    name:z.string(),
-   email:z.string(),
+   email:z.string().email(),
    password:z.string()
 
 })
 
 
-type createinstructer = z.infer<typeof createinstructer>;
+export type createinstructer = z.infer<typeof createinstructerinput>;

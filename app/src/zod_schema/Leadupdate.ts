@@ -17,4 +17,4 @@ export const updateleadinput = z.object({
 })
 
 
-type updateleadinput = z.infer<typeof updateleadinput>;
+export type updateleadinput = z.infer<typeof updateleadinput>;

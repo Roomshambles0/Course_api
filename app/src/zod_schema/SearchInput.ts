@@ -2,11 +2,11 @@ import  { z } from "zod";
 
 
 
-export const leadsearch = z.object({
+export const leadsearchinput = z.object({
 
    id:z.string(),
-   email:z.string()
+   email:z.string().email()
 })
 
 
-type createlead = z.infer<typeof leadsearch>;
+export type leadsearchinputtype = z.infer<typeof leadsearchinput>;

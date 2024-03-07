@@ -2,6 +2,7 @@ import  { z } from "zod";
 
 
 export const updatecourseinput = z.object({
+   id:z.string(),
    title:z.string().optional(),
    teacherId:z.string(),
    maxseats:z.number().optional(),   
@@ -10,4 +11,4 @@ export const updatecourseinput = z.object({
 })
 
 
-type updatecourseinput = z.infer<typeof updatecourseinput>;
+export type updatecourseinput = z.infer<typeof updatecourseinput>;
