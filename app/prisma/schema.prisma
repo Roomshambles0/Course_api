@@ -48,13 +48,19 @@ enum Status {
 }
 
 model Leads {
-  id      String @id @default(uuid())
+  id       String @id @default(uuid())
 
   courseId String
   course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
   
   userId  String
   user    Learner @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  email     String @unique
+  name      String
+
+  phoneno   String
+  LinkedIn  String
 
   status  Status @default(APPLIED)
   
