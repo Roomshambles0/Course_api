@@ -3,9 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.learner = void 0;
 const express_1 = __importDefault(require("express"));
 const createlearner_1 = require("../controller/createlearner");
-const createleadserviece_1 = require("../controller/createleadserviece");
-const router = express_1.default.Router();
-router.post("/createlearner", createlearner_1.learnercontroller);
-router.post("/register", createleadserviece_1.createlead);
+const createleadcontroller_1 = require("../controller/createleadcontroller");
+exports.learner = express_1.default.Router();
+exports.learner.post("/createlearner", createlearner_1.learnercontroller);
+exports.learner.post("/register", createleadcontroller_1.createlead);

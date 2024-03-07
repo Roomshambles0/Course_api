@@ -10,7 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.leadsearch = void 0;
-const searchteacher_1 = require("../model/searchteacher");
 const SearchInput_1 = require("../zod_schema/SearchInput");
 const LeadSearch_1 = require("../model/LeadSearch");
 const leadsearch = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -21,15 +20,11 @@ const leadsearch = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         const parseddata = SearchInput_1.leadsearchinput.safeParse(body);
         if (!parseddata.success)
             return res.status(400).json({ message: "Please send correct input" });
-        const { teacheId } = body;
-        const isteacher = yield (0, searchteacher_1.searchTeacher)(teacheId);
-        if (!isteacher)
-            return res.status(400).json({ message: "Instructor does not present" });
         const { email } = body;
         const lead = yield (0, LeadSearch_1.search)(email);
         if (!lead)
             return res.status(400).json({ message: "lead does not exist" });
-        return res.status(200).json({ message: "instructor created successful", lead });
+        return res.status(200).json({ lead: lead });
     }
     catch (e) {
         console.log("leadsearch controller error", e);

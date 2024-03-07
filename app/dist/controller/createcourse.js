@@ -16,6 +16,7 @@ const createcourse = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     const body = req.body;
     if (!body)
         return res.status(400).json({ message: "You can't sent emply request" });
+    console.log(body);
     const parseddata = CourseInput_1.createcourseinput.safeParse(body);
     if (!parseddata.success)
         return res.status(400).json({ message: "Please send correct input" });

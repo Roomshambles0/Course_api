@@ -7,6 +7,6 @@ exports.updatecourseinput = zod_1.z.object({
     title: zod_1.z.string().optional(),
     teacherId: zod_1.z.string(),
     maxseats: zod_1.z.number().optional(),
-    startdate: zod_1.z.date().optional(),
+    startdate: zod_1.z.string().optional(),
     published: zod_1.z.boolean().optional()
 });

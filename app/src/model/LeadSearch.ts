@@ -1,17 +1,17 @@
 import { db } from "./client"
 
 
-export async function search(id:string){
+export async function search(email:string){
   try{
     
     
-    const searchedlead = await db.leads.findUnique({
+    const searchedlead = await db.leads.findMany({
      where:{
-        id
+        email
      }
 
     })
-
+ 
     return searchedlead;
 
   }catch(e){

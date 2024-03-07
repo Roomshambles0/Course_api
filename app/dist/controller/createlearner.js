@@ -22,6 +22,6 @@ const learnercontroller = (req, res) => __awaiter(void 0, void 0, void 0, functi
     const learner = yield (0, createlearnerservice_1.createLearner)(body);
     if (!learner)
         return res.status(500).json({ message: "internal server error" });
-    return res.status(200).json({ message: "instructor created successful", learner: learner });
+    return res.status(200).json({ message: "learner created successful", learner: learner });
 });
 exports.learnercontroller = learnercontroller;

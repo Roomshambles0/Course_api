@@ -19,7 +19,8 @@ export const createlead = async(req:Request,res:Response)=>{
 
     const islearner = await db.learner.findUnique({
         where:{
-            email
+            email,
+            name:body.name
         }
     })
 
@@ -28,12 +29,13 @@ export const createlead = async(req:Request,res:Response)=>{
     const isleadpresent = await db.leads.findMany({
        where:{
         userId,
-        courseId
-        
+        courseId,
+        email
+
        }
     }) 
-      
-    if(isleadpresent) return res.json({message:"already applied for course"})
+      console.log(isleadpresent)
+    if(isleadpresent[0]) return res.json({message:"already applied for course"})
 
     const createlead = await createLead(body) 
     

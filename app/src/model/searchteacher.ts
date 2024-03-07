@@ -1,12 +1,12 @@
 import { db } from "./client";
 
-export async function searchTeacher(id:string){
+export async function searchTeacher(teacheId:string){
     try{
       
       
       const searchedlead = await db.teacher.findUnique({
        where:{
-          id
+          id:teacheId
        }
   
       })

@@ -14,16 +14,17 @@ export const updatecourse = async (req:Request,res:Response) =>{
     if(!parseddata.success) return res.status(400).json({message:"Please send correct input"})
      
     const {id} = body
-    const {teacheId} = body
-    const isteacher =  await searchTeacher(id)
+    const {teacherId} = body
+    console.log(teacherId)
+    const isteacher =  await searchTeacher(teacherId)
 
       if(!isteacher) return res.status(400).json({message:"Instructor does not present"});
     
     const updatedcourse = await updatecourses(id,body) 
-    
+    console.log(updatedcourse)
 
     if(!updatedcourse) return res.status(400).json({message:"something went wrong"})
      
-    return res.status(200).json({message:"instructor created successful",updatedcourse})
+    return res.status(200).json({message:"course updated successfully",updatedcourse})
 
 }

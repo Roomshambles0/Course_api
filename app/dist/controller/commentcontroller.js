@@ -10,7 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.comment = void 0;
-const searchteacher_1 = require("../model/searchteacher");
 const Leadcomment_1 = require("../zod_schema/Leadcomment");
 const Leadupdate_1 = require("../model/Leadupdate");
 const comment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -21,11 +20,6 @@ const comment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const parseddata = Leadcomment_1.leadcommentinput.safeParse(body);
         if (!parseddata.success)
             return res.status(400).json({ message: "Please send correct input" });
-        const { teacheId } = body;
-        const isteacher = yield (0, searchteacher_1.searchTeacher)(teacheId);
-        if (!isteacher)
-            return res.status(400).json({ message: "Instructor does not present" });
-        const { email } = body;
         const { id } = body;
         const comment = {
             comment: body.comment

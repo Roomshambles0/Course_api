@@ -12,11 +12,8 @@ export const leadupdate = async (req:Request,res:Response) =>{
 
     if(!parseddata.success) return res.status(400).json({message:"Please send correct input"})
      
-    const {id} = body
-    const {teacheId} = body
-    const isteacher =  await searchTeacher(teacheId)
 
-      if(!isteacher) return res.status(400).json({message:"Instructor does not present"});
+
     
     const updatedlead = await updateLead(body) 
     

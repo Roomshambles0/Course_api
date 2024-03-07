@@ -13,10 +13,6 @@ export const leadsearch = async (req:Request,res:Response) =>{
 
     if(!parseddata.success) return res.status(400).json({message:"Please send correct input"})
      
-    const {teacheId} = body
-    const isteacher =  await searchTeacher(teacheId)
-
-    if(!isteacher) return res.status(400).json({message:"Instructor does not present"});
     
     const {email} = body
 
@@ -24,7 +20,7 @@ export const leadsearch = async (req:Request,res:Response) =>{
 
     if(!lead) return res.status(400).json({message:"lead does not exist"})
 
-    return res.status(200).json({message:"instructor created successful",lead})
+    return res.status(200).json({lead:lead})
     }catch(e){
         console.log("leadsearch controller error",e)
         return res.status(500).json({message:"internal server error"})

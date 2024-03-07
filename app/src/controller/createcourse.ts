@@ -7,7 +7,7 @@ export const createcourse = async (req:Request,res:Response) =>{
 
     const body = req.body 
     if (!body) return res.status(400).json({message:"You can't sent emply request"})
-    
+     console.log(body)
     const parseddata = createcourseinput.safeParse(body);
 
     if(!parseddata.success) return res.status(400).json({message:"Please send correct input"})

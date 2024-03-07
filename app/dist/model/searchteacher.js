@@ -11,12 +11,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.searchTeacher = void 0;
 const client_1 = require("./client");
-function searchTeacher(id) {
+function searchTeacher(teacheId) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const searchedlead = yield client_1.db.teacher.findUnique({
                 where: {
-                    id
+                    id: teacheId
                 }
             });
             if (searchedlead) {

@@ -10,8 +10,7 @@ export async function  updateLead(data:updateleadinput) {
         id,
         status
     } = data
-   const teacher = await searchTeacher(id)
-   if(!teacher) return null
+
     
    let status1;
    if(status == 'accept')
@@ -35,7 +34,7 @@ export async function  updateLead(data:updateleadinput) {
  const updatedlead = await updatelead(id,senddata)
 
  if(updatedlead){
-    return updateLead
+    return updatedlead
  }else{
     return null
  }

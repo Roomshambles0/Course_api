@@ -6,7 +6,7 @@ export const updatecourseinput = z.object({
    title:z.string().optional(),
    teacherId:z.string(),
    maxseats:z.number().optional(),   
-   startdate:z.date().optional(),
+   startdate:z.string().optional(),
    published:z.boolean().optional()
 })
 

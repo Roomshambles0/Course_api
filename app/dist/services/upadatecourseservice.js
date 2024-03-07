@@ -15,7 +15,7 @@ function updatecourses(id, data) {
     return __awaiter(this, void 0, void 0, function* () {
         const updatedcourse = yield (0, UpdateCourse_1.updatecourse)(id, data);
         if (updatedcourse) {
-            return UpdateCourse_1.updatecourse;
+            return updatedcourse;
         }
     });
 }

@@ -11,14 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateLead = void 0;
 const Leadupdate_1 = require("../model/Leadupdate");
-const searchteacher_1 = require("../model/searchteacher");
 const client_1 = require("@prisma/client");
 function updateLead(data) {
     return __awaiter(this, void 0, void 0, function* () {
         const { id, status } = data;
-        const teacher = yield (0, searchteacher_1.searchTeacher)(id);
-        if (!teacher)
-            return null;
         let status1;
         if (status == 'accept') {
             status1 = client_1.Status.ACCEPT;
@@ -34,7 +30,7 @@ function updateLead(data) {
         };
         const updatedlead = yield (0, Leadupdate_1.updatelead)(id, senddata);
         if (updatedlead) {
-            return updateLead;
+            return updatedlead;
         }
         else {
             return null;

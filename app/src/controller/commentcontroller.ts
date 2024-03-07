@@ -12,12 +12,9 @@ export const comment = async (req:Request,res:Response) =>{
     const parseddata = leadcommentinput.safeParse(body);
 
     if(!parseddata.success) return res.status(400).json({message:"Please send correct input"})
-     
-    const {teacheId} = body
-    const isteacher =  await searchTeacher(teacheId)
-    if(!isteacher) return res.status(400).json({message:"Instructor does not present"});
+
     
-    const {email} = body 
+   
     const {id}   = body
     const comment = {
         comment:body.comment

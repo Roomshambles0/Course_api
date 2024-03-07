@@ -7,9 +7,9 @@ export const createcourseinput = z.object({
    title:z.string(),
    teacherId:z.string(),
    maxseats:z.number(),   
-   startdate:z.date(),
+   startdate:z.string(),
    published:z.boolean()
 })
 
 
-type createcourseinput = z.infer<typeof createcourseinput>;
+type createcourtype = z.infer<typeof createcourseinput>;
