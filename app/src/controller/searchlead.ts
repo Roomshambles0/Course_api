@@ -1,7 +1,6 @@
 import { Request,Response } from "express"
-import { searchTeacher } from "../model/searchteacher";
 import { leadsearchinput } from "../zod_schema/SearchInput";
-import { search } from "../model/LeadSearch";
+import { search } from "../model/SearchLead";
 
 export const leadsearch = async (req:Request,res:Response) =>{
 

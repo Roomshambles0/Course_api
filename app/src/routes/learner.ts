@@ -1,7 +1,7 @@
 
 import express from "express";
 import { learnercontroller } from "../controller/createlearner";
-import { createlead } from "../controller/createleadcontroller";
+import { createlead } from "../controller/createlead";
 
 export const learner = express.Router();
 

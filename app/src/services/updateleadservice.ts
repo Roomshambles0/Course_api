@@ -1,5 +1,5 @@
-import { updatelead } from "../model/Leadupdate"
-import { searchTeacher } from "../model/searchteacher"
+import { updatelead } from "../model/UpdateLead"
+import { searchTeacher } from "../model/SearchInstructer"
 import { updateleadinput } from "../zod_schema/Leadupdate"
 
 import { Status } from "@prisma/client"

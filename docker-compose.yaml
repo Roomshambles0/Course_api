@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  postgresql:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: courseapi
+
+  myapp:
+    image: piyushk04/courseapi:v3
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:1234@postgresql:5432/courseapi?schema=public
+    depends_on:
+      - postgresql
+
+  studio:
+    image: piyushk04/courseapi:v3
+    restart: always
+    ports:
+      - 5555:5555
+    environment:
+      - DATABASE_URL=postgresql://postgres:1234@postgresql:5432/courseapi?schema=public
+    depends_on:
+      - myapp
+    command:      
+      - npx
+      - prisma
+      - studio
+
+volumes:
+  postgresql_data:

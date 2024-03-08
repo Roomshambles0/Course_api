@@ -1,6 +1,6 @@
 import { Request,Response } from "express"
 import { updateleadinput } from "../zod_schema/Leadupdate";
-import { searchTeacher } from "../model/searchteacher";
+import { searchTeacher } from "../model/SearchInstructer";
 import { updateLead } from "../services/updateleadservice";
 
 export const leadupdate = async (req:Request,res:Response) =>{

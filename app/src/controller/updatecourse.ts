@@ -1,7 +1,7 @@
 import { Request,Response } from "express"
 import { updatecourseinput } from "../zod_schema/updatecourseinput"
 import { updatecourses } from "../services/upadatecourseservice"
-import { searchTeacher } from "../model/searchteacher"
+import { searchTeacher } from "../model/SearchInstructer"
 
 
 export const updatecourse = async (req:Request,res:Response) =>{

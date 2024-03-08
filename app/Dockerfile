@@ -6,12 +6,17 @@ COPY ["tsconfig.json", "./tsconfig.json"]
 COPY ["package.json", "./package.json"]
 COPY ["package-lock.json", "./package-lock.json"]
 
-COPY . .
-
 RUN npm install
+
+COPY prisma ./prisma
+
+RUN npx prisma generate
+
+COPY  . .
 
 RUN cd /base && npm run build
 
-CMD ["npm", "start"]
+
+CMD ["./start.sh"]
 
 EXPOSE 3000

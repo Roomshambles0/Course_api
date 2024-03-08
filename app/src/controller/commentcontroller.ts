@@ -1,7 +1,7 @@
 import { Request,Response } from "express"
-import { searchTeacher } from "../model/searchteacher";
+import { searchTeacher } from "../model/SearchInstructer";
 import { leadcommentinput } from "../zod_schema/Leadcomment";
-import { updatelead } from "../model/Leadupdate";
+import { updatelead } from "../model/UpdateLead";
 
 export const comment = async (req:Request,res:Response) =>{
 
