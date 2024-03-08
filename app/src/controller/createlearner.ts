@@ -1,10 +1,11 @@
 import { Request,Response } from "express"
 import { createlearner } from "../zod_schema/Createlearner"
-import { createLearner } from "../services/createlearnerservice"
+import { learner } from "../model/CreateLearner" 
 
 
-export const learnercontroller = async (req:Request,res:Response) =>{
-
+export const Createlearner = async (req:Request,res:Response) =>{
+try{
+    
     const body = req.body 
     if (!body) return res.status(400).json({message:"You can't sent emply request"})
     
@@ -12,10 +13,21 @@ export const learnercontroller = async (req:Request,res:Response) =>{
 
     if(!parseddata.success) return res.status(400).json({message:"Please send correct input"})
     
-    const learner = await createLearner(body) 
+    const {
+        email,
+        name, 
+        password,          
+          } = body
+         
+      
+          const data = await learner(name,email,password)
 
-    if(!learner) return res.status(500).json({message:"internal server error"})
+    if(!data) return res.status(400).json({message:"data does not present"})
      
-    return res.status(200).json({message:"learner created successful",learner:learner})
+    return res.status(200).json({message:"learner created successful",data})
+}catch(e){
 
+    console.log("Create course route error: ",e)
+    return res.status(500).json({message:"Internal server error"})
+}
 }

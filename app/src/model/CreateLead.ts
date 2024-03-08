@@ -1,9 +1,9 @@
-import { string } from "zod";
 import { db } from "./client"
 
 
 export async function createlead(courseId:string,userId:string,phoneno:string,LinkedIn:string,email:string,name:string){
   try{
+
     const Lead = await db.leads.create({
         data:{
           email,

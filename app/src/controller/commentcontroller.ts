@@ -1,7 +1,6 @@
 import { Request,Response } from "express"
-import { searchTeacher } from "../model/SearchInstructer";
 import { leadcommentinput } from "../zod_schema/Leadcomment";
-import { updatelead } from "../model/UpdateLead";
+import { CreateComment } from "../model/AddComment";
 
 export const comment = async (req:Request,res:Response) =>{
 
@@ -12,14 +11,8 @@ export const comment = async (req:Request,res:Response) =>{
     const parseddata = leadcommentinput.safeParse(body);
 
     if(!parseddata.success) return res.status(400).json({message:"Please send correct input"})
-
-    
-   
-    const {id}   = body
-    const comment = {
-        comment:body.comment
-    }
-    const commented = await updatelead(id,comment)
+  
+    const commented = await CreateComment(body)
 
     if(!commented) return res.status(400).json({message:"not commented"})
 

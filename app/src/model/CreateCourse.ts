@@ -1,7 +1,7 @@
 import { db } from "./client"
 
 
-export async function createcourse(teacherId:string,title:string,maxseats:number,startdate:Date,published:boolean){
+export async function course(teacherId:string,title:string,maxseats:number,startdate:Date,published:boolean){
   try{
     const Course = await db.course.create({
         data:{

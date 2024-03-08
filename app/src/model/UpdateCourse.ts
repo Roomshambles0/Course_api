@@ -2,7 +2,7 @@ import { updatedata } from "../types/updatedata";
 import { db } from "./client"
 
 
-export async function updatecourse(Id:string,data:updatedata){
+export async function Updatecourse(Id:string,data:updatedata){
   try{
     
     

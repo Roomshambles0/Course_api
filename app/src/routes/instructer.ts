@@ -1,7 +1,7 @@
 
 import express from "express";
 import { createcourse } from "../controller/createcourse";
-import { instructercontroller } from "../controller/createinstructer";
+import { instructer } from "../controller/createinstructer";
 import { updatecourse } from "../controller/updatecourse";
 import { leadupdate } from "../controller/updatelead";
 import { leadsearch } from "../controller/searchlead";
@@ -11,13 +11,13 @@ export const router = express.Router();
 
 
 
-router.post("/createteacher",instructercontroller)
+router.post("/createteacher",instructer)
 
 router.post("/createCourse",createcourse)
 
 router.put("/updatecourse",updatecourse)
 
-router.patch("/leadupdate",leadupdate)
+router.patch("/updatelead",leadupdate)
 
 router.post("/comment",comment)
 
