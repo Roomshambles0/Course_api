@@ -82,9 +82,9 @@ Connect your postgresql database
    - Request Body:
      ```json
      {
-    "email":"piyushkulkarni2003@gmail.com",
-    "name":"piyush2",
-    "password":"222"
+        "email":"piyushkulkarni2003@gmail.com",
+        "name":"piyush2",
+        "password":"222"
      }
      ```
    - Response: Status 200 OK with the created learner object.
@@ -113,11 +113,11 @@ Connect your postgresql database
    - Request Body:
      ```json
     {
-    "id":"clth70s3n00017wjdz8o1qdsz",
-    "title":"web developement cohort",
-    "teacherId":"clth5jvrs0000eo4lcpa9otbj",
-    "maxseats":56,
-    "startdate":"2024-03-15T14:30:00.000Z"
+        "id":"clth70s3n00017wjdz8o1qdsz",
+        "title":"web developement cohort",
+        "teacherId":"clth5jvrs0000eo4lcpa9otbj",
+        "maxseats":56,
+        "startdate":"2024-03-15T14:30:00.000Z"
     }
      ```
    - Response: Status 200 OK with the updated course object.
