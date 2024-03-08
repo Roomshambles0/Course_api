@@ -68,9 +68,9 @@ Connect your postgresql database
    - Request Body:
      ```json
      {
-    "email":"piyushkulkarni2003@gmail.com",
-    "name":"piyush2",
-    "password":"222"
+        "email":"piyushkulkarni2003@gmail.com",
+        "name":"piyush2",
+        "password":"222"    
      }
      ```
    - Response: Status 200 OK with the instructer object.
@@ -95,7 +95,8 @@ Connect your postgresql database
    - Endpoint: `/instructer/createCourse`
    - Description: Creates a new course.
    - Request Body:
-     ```json
+
+    ```json
     {
         "title":"web dev cohort",
         "teacherId":"cltigqbq2000012wancp78hxp",
@@ -103,7 +104,8 @@ Connect your postgresql database
         "startdate":"2024-03-15T14:30:00.000Z",
         "published":true
     }
-     ```
+    ```
+
    - Response: Status 200 OK with the created course object.
 
 4. **Update Course**
@@ -111,7 +113,8 @@ Connect your postgresql database
    - Endpoint: `/instructer/updatecourse`
    - Description: Updates details of an existing course.
    - Request Body:
-     ```json
+
+    ```json
     {
         "id":"clth70s3n00017wjdz8o1qdsz",
         "title":"web developement cohort",
@@ -119,7 +122,8 @@ Connect your postgresql database
         "maxseats":56,
         "startdate":"2024-03-15T14:30:00.000Z"
     }
-     ```
+    ```
+
    - Response: Status 200 OK with the updated course object.
 
 5. **Course Registration**
@@ -127,7 +131,7 @@ Connect your postgresql database
    - Endpoint: `/learner/registerLead`
    - Description: Registers a user for a course.
    - Request Body:
-     ```json
+    ```json
     {
         "email":"piyushkulkarni2002@gmail.com",
         "name":"piyush",
@@ -137,7 +141,7 @@ Connect your postgresql database
         "phoneno": "12346",
         "LinkedIn": "https://www.linkedin.com/in/johndoe/"
     }
-     ```
+    ```
    - Response: Status 200 OK with the registered user object.
 
 6. **Lead Update**
@@ -158,11 +162,11 @@ Connect your postgresql database
    - Endpoint: `/instructer/lead`
    - Description: Searches for leads by name or email.
    -- Request Body:
-     ```json
+    ```json
     {
         "email":"piyushkulkarni2002@gmail.com"
     }
-     ```
+    ```
    - Response: Status 200 OK with an array of matching lead objects.
 
 8. **Add Comment**
@@ -170,12 +174,12 @@ Connect your postgresql database
    - Endpoint: `/instructer/comment`
    - Description: Adds a comment to a lead.
    - Request Body:
-     ```json
+    ```json
     {
         "id":"4461b040-acdc-4364-9bca-f95638d2e262",
         "comment":"another comment for lead"
     }
-     ```
+    ```
    - Response: Status 200 OK with the lead added comment object.
 
 
