@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "48075f2c-e82d-4235-b91f-1220e6e8fb74",
+		"name": "Course_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28273378"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/learner/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"piyushkulkarni2002@gmail.com\",\r\n    \"name\":\"piyush\",\r\n    \"title\":\"web dev cohort\",\r\n    \"courseId\": \"cltigv4py000312wa1q6ktca0\",\r\n    \"userId\": \"clth56wk70000ccn014za74pe\",\r\n    \"phoneno\": \"12346\",\r\n    \"LinkedIn\": \"piyush\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/learner/registerLead",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"learner",
+						"registerLead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/instructer/updatecourse",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"clth70s3n00017wjdz8o1qdsz\",\r\n   \"title\":\"web developement cohort\",\r\n   \"teacherId\":\"clth5jvrs0000eo4lcpa9otbj\",\r\n   \"maxseats\":56,\r\n   \"startdate\":\"2024-03-15T14:30:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/instructer/updatecourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"instructer",
+						"updatecourse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/instructer/leadupdate",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"4461b040-acdc-4364-9bca-f95638d2e262\",\r\n    \"status\":\"reject\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/instructer/updatelead",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"instructer",
+						"updatelead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/instructer/lead",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"piyushkulkarni2002@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/instructer/lead",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"instructer",
+						"lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/instructer/comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"4461b040-acdc-4364-9bca-f95638d2e262\",\r\n    \"comment\":\"another comment for lead\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/instructer/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"instructer",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/learner/createlearner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"piyushkulkarni2001@gmail.com\",\r\n    \"name\":\"piyush1\",\r\n    \"password\":\"111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/learner/createlearner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"learner",
+						"createlearner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/instructer/createteacher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"piyushkulkarni2002@gmail.com\",\r\n    \"name\":\"piyush\",\r\n    \"password\":\"111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/instructer/createteacher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"instructer",
+						"createteacher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/instructer/createCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"web dev cohort\",\r\n    \"teacherId\":\"cltigqbq2000012wancp78hxp\",\r\n    \"maxseats\": 99,\r\n    \"startdate\":\"2024-03-15T14:30:00.000Z\",\r\n    \"published\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/instructer/createCourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"instructer",
+						"createCourse"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

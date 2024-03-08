@@ -8,9 +8,11 @@ try{
     if (!body) return res.status(400).json({message:"You can't sent emply request"})
      
     const parseddata = updateleadinput.safeParse(body);
-
     if(!parseddata.success) return res.status(400).json({message:"Please send correct input"})
      
+
+
+    
     const data = await updatelead(body) 
 
     if(!data) return res.status(400).json({message:"data does not present"})

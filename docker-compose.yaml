@@ -23,7 +23,7 @@ services:
       - postgresql
 
   studio:
-    image: piyushk04/courseapi:v4
+    image: piyushk04/courseapi:v4 
     restart: always
     ports:
       - 5555:5555
